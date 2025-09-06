@@ -1,0 +1,5 @@
+bin/
+obj/
+.vs/
+*.user
+/LabRules.Api/appsettings.Development.json
