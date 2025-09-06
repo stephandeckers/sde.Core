@@ -5,9 +5,17 @@
   </PropertyGroup>
 	
   <PropertyGroup>
-    <TargetFrameworks>net8.0</TargetFrameworks>
+    <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	<PackageId>sde.Core</PackageId>
+	<Version>1.0.0</Version>
+	<Authors>S.Deckers</Authors>
+	<Company>SDE Computing</Company>
+	<PackageDescription>sde Core libraries</PackageDescription>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<RepositoryUrl>https://github.com/stephandeckers/sde.Core</RepositoryUrl>
+	<PackageProjectUrl>https://github.com/stephandeckers/sde.Core</PackageProjectUrl>
   </PropertyGroup>
 
 </Project>
