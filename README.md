@@ -9,10 +9,16 @@ global using g=sde.Core.Global;
 global using d=System.Diagnostics.Debug;
 </pre>
 
-Then use the following statements
+Then use the following statements inside your code to see what method is executing
 
 <pre>
-g.WriteLine( GetType().Name);
-g.WriteLine( MethodBase.GetCurrentMethod().DeclaringType.Name); 	// -- static
-g.WriteLine( MethodBase.GetCurrentMethod()!.DeclaringType!.Name);	// --- Dereference of a possibly null reference
+private void SomeCoolMethod()
+{
+   g.WriteLine( GetType().Name);
+}
+
+private statuc SomeCoolStaticMethod()
+{
+   g.WriteLine( MethodBase.GetCurrentMethod()!.DeclaringType!.Name);
+}
 </pre>

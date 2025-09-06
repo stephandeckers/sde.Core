@@ -9,7 +9,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	<PackageId>sde.Core</PackageId>
-	<Version>1.0.0</Version>
+	<Version>1.0.1</Version>
 	<Authors>S.Deckers</Authors>
 	<Company>SDE Computing</Company>
 	<PackageDescription>sde Core libraries</PackageDescription>
@@ -19,7 +19,21 @@
   </PropertyGroup>
 
 	<PropertyGroup>
-		<PackageReadmeFile>"README.md" Pack="true" PackagePath="\"</PackageReadmeFile>
+		<Title>sde Core package</Title>
+		<Description>Core utilities</Description>
+		<Copyright>SDE Computing</Copyright>
+		<PackageIcon>package.png</PackageIcon>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Include="..\package.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	  <None Include="..\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
 	
 </Project>
