@@ -1,0 +1,38 @@
+name: Publish NuGet Package
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - 'feature/*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Restore Dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+
+    - name: Pack
+      run: |
+        if [[ "${GITHUB_REF##*/}" == "main" ]]; then
+          dotnet pack --configuration Release -p:PackageVersion=1.0.${{ github.run_number }}
+        else
+          dotnet pack --configuration Release -p:PackageVersion=1.0.${{ github.run_number }}-unstable
+        fi
+
+    - name: Publish Package
+      run: dotnet nuget push "**/*.nupkg" --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ secrets.NUGET_AUTH_TOKEN }} --skip-duplicate
