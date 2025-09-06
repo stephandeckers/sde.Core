@@ -18,4 +18,8 @@
 	<PackageProjectUrl>https://github.com/stephandeckers/sde.Core</PackageProjectUrl>
   </PropertyGroup>
 
+	<PropertyGroup>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
+	
 </Project>
