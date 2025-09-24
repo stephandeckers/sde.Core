@@ -6,5 +6,6 @@
  * @Description 
  */
 
+global using System.Reflection;
 global using g=sde.Core.Global;
 global using d=System.Diagnostics.Debug;
